@@ -1,0 +1,311 @@
+header .wrapper #menu {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.7rem;
+  /* background: yellowgreen; */
+}
+@media only screen and (min-width: 850px) {
+  header .wrapper #menu {
+    padding: 15px 50px;
+  }
+}
+header .wrapper #menu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .wrapper #menu #header-text {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 500;
+  font-size: 4rem;
+  font-size: calc(2.5rem + 1vw);
+  color: white;
+  z-index: 2;
+}
+header .wrapper #menu #header-text a,
+header .wrapper #menu #header-text a:active,
+header .wrapper #menu #header-text a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+header .wrapper #menu #header-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 25px;
+  width: 470px;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+}
+@media only screen and (min-width: 850px) {
+  header .wrapper #menu #header-links {
+    display: flex;
+  }
+}
+header .wrapper #menu #header-links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .wrapper #menu #header-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+header .wrapper #menu #header-links li:hover {
+  color: palevioletred;
+}
+header .wrapper #menu #header-links .hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+header .wrapper #menu #header-links .hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: palevioletred;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+header .wrapper #menu #header-links .hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+header .wrapper #menu #header-social {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width: 180px;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  /* background: rgba( 255, 255, 255, 0.2 );
+                backdrop-filter: blur( 2.5px );
+                -webkit-backdrop-filter: blur( 2.5px );
+                border-radius: 30px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+@media only screen and (min-width: 850px) {
+  header .wrapper #menu #header-social {
+    display: flex;
+  }
+}
+header .wrapper #menu #header-social li {
+  width: 55px;
+  height: 38px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .wrapper #menu #header-social li a {
+  text-decoration: none;
+  color: inherit;
+}
+header .wrapper #menu #header-social li.fb:hover {
+  background-color: #3b5998;
+  box-shadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06)';
+}
+header .wrapper #menu #header-social li.twitter:hover {
+  background-color: #00acee;
+  box-shadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06)';
+}
+header .wrapper #menu #header-social li.instagram:hover {
+  background-color: #e1306c;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+  box-shadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06)';
+}
+header .wrapper #menu #header-social li.youtube:hover {
+  background-color: #c4302b;
+  box-shadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06)';
+}
+@media only screen and (min-width: 850px) {
+  header .wrapper #menu #ham-wrapper {
+    display: none;
+  }
+}
+header .wrapper #menu #ham-wrapper .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+}
+header .wrapper #menu #ham-wrapper .hamRotate.active {
+  transform: rotate(45deg);
+}
+header .wrapper #menu #ham-wrapper .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: ghostwhite;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+header .wrapper #menu #ham-wrapper .ham4 .top {
+  stroke-dasharray: 40 121;
+}
+header .wrapper #menu #ham-wrapper .ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+header .wrapper #menu #ham-wrapper .ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+header .wrapper #menu #ham-wrapper .ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+#menu-mobile {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding-top: 90px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  top: 0;
+  left: 0;
+  background: #292324;
+  z-index: 1;
+  display: none;
+  color: white;
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+}
+#menu-mobile.active {
+  display: block;
+}
+#menu-mobile #menu-list {
+  list-style-type: none;
+  padding: 0 15px;
+}
+#menu-mobile #menu-list a {
+  text-decoration: none;
+}
+#menu-mobile #menu-list li:first-of-type {
+  margin-top: 10px;
+}
+#menu-mobile #menu-list li {
+  margin-top: 30px;
+  transition: 0.18s transform ease-out;
+}
+#menu-mobile #menu-list li h1 {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: white;
+  color: wheat;
+}
+#menu-mobile #menu-list li p {
+  margin: 0;
+  color: whitesmoke;
+}
+#menu-mobile #menu-list li:hover {
+  transform: translate(15px, 0);
+}
+#menu-mobile #menu-list li:last-of-type:hover {
+  transform: translate(0, 0);
+}
+#menu-mobile #social {
+  width: 200px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+}
+#menu-mobile #social a {
+  color: white;
+}
+#menu-mobile #social div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #ff1a40;
+  padding: 0;
+  margin: 0;
+  font-size: 2.3rem;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+#menu-mobile #social #fb {
+  background-color: #3b5998;
+}
+#menu-mobile #social #instagram {
+  background-color: #e1306c;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+#menu-mobile #social #twitter {
+  background-color: #00acee;
+}
+#menu-mobile #social #youtube {
+  background-color: #c4302b;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  color: white;
+  background: #443c3e;
+  z-index: 1;
+}
+header .wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin: 0;
+}
+footer .wrapper p {
+  padding: 0;
+  margin: 0;
+}
+footer #qadowsh {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 900;
+  font-size: 2rem;
+  font-size: calc(1rem + 1vw);
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+footer #copyright {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-size: 1.4rem;
+}

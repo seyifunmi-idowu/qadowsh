@@ -1,0 +1,410 @@
+@pink: #ff1a40;
+@black: #443c3e;
+@desktop: ~"only screen and (min-width: 850px)";
+@tablet: ~"only screen and (min-width: 700px)";
+#social() {
+  .fb {
+    background-color: #3b5998;
+  }
+  .instagram {
+    background-color: #e1306c;
+    background: #f09433;
+    background: -moz-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: -webkit-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  .twitter {
+    background-color: #00acee;
+  }
+  .youtube {
+    background-color: #c4302b;
+  }
+}
+
+.primary-btn {
+  display: inline-block;
+  width: 180px;
+  height: 45px;
+  border-radius: 5px;
+  /* background: whitesmoke; */
+  border: #fff solid 3px;
+  color: white; /* #0a0a0a */
+  text-decoration: none;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  .flex();
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* if button has icon */
+  .fa {
+    display: inline-block;
+    font-size: 2rem;
+    color: inherit; /* #0a0a0a */
+    margin-left: 10px;
+  }
+}
+
+/* SECTIONS INTRO */
+.intro {
+  width: 100%;
+  h1 {
+    font-family: "Playfair Display";
+    font-size: calc(2.5rem + 1vw);
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.3);
+    color: #ff1a40;
+  }
+  p {
+    font-family: "Poppins";
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 4px;
+    color: @black;
+  }
+}
+
+.flex (@justify: center; @align: center; @direction: row;) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+header .wrapper {
+  #menu {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7rem;
+    /* background: yellowgreen; */
+
+    @media @desktop {
+      padding: 15px 50px;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #header-text {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 500;
+      font-size: 4rem;
+      font-size: calc(2.5rem + 1vw);
+      color: white;
+      z-index: 2;
+      a, a:active, a:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    #header-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 25px;
+      width: 470px;
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      @media @desktop {
+        display: flex;
+      }
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        &:hover {
+          color: palevioletred;
+        }
+      }
+
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+      }
+
+      .hover-underline-animation:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: palevioletred;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+
+    #header-social {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px;
+      width: 180px;
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      /* background: rgba( 255, 255, 255, 0.2 );
+                backdrop-filter: blur( 2.5px );
+                -webkit-backdrop-filter: blur( 2.5px );
+                border-radius: 30px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+      @media @desktop {
+        display: flex;
+      }
+
+      li {
+        width: 55px;
+        height: 38px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @shadow : '0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06)';
+        
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        &.fb:hover {
+          #social.fb();
+          box-shadow: @shadow;
+        }
+        &.twitter:hover {
+          #social.twitter();
+          box-shadow: @shadow;
+        }
+        &.instagram:hover {
+          #social.instagram();
+          box-shadow: @shadow;
+        }
+        &.youtube:hover {
+          #social.youtube();
+          box-shadow: @shadow;
+        }
+      }
+    }
+
+    #ham-wrapper {
+      @media @desktop {
+        display: none;
+      }
+      .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 2;
+      }
+      .hamRotate.active {
+        transform: rotate(45deg);
+      }
+      .line {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: ghostwhite;
+        stroke-width: 5.5;
+        stroke-linecap: round;
+      }
+      .ham4 .top {
+        stroke-dasharray: 40 121;
+      }
+      .ham4 .bottom {
+        stroke-dasharray: 40 121;
+      }
+      .ham4.active .top {
+        stroke-dashoffset: -68px;
+      }
+      .ham4.active .bottom {
+        stroke-dashoffset: -68px;
+      }
+    }
+  }
+}
+
+#menu-mobile {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding-top: 90px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  top: 0;
+  left: 0;
+  background: #292324;
+  z-index: 1;
+  display: none;
+  color: white;
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+
+  &.active {
+    display: block;
+  }
+
+  #menu-list {
+    list-style-type: none;
+    padding: 0 15px;
+
+    a {
+      text-decoration: none;
+    }
+
+    li:first-of-type {
+      margin-top: 10px;
+    }
+
+    li {
+      margin-top: 30px;
+      transition: 0.18s transform ease-out;
+
+      h1 {
+        font-family: "Poppins";
+        font-weight: 500;
+        color: white;
+        color: wheat;
+      }
+      p {
+        margin: 0;
+        color: whitesmoke;
+      }
+
+      &:hover {
+        transform: translate(15px, 0);
+      }
+    }
+
+    li:last-of-type {
+      &:hover {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  #social {
+    width: 200px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      color: white;
+    }
+
+    div {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background: #ff1a40;
+      padding: 0;
+      margin: 0;
+      font-size: 2.3rem;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+    }
+
+    #fb {
+      #social.fb()
+    }
+    #instagram {
+      #social.instagram()
+    }
+    #twitter {
+      #social.twitter()
+    }
+    #youtube {
+      #social.youtube()
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin: 0;
+
+  .wrapper {
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  #qadowsh {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 900;
+    font-size: 2rem;
+    font-size: calc(1rem + 1vw);
+    color: white;
+    margin: 0;
+    text-align: center;
+  }
+
+  #copyright {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}
